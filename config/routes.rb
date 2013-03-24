@@ -51,8 +51,9 @@ Store::Application.routes.draw do
   root :to => 'home#index'
 
   resources :home do
-    member do
-      get 'register'
+    collection do
+      get 'join'
+      post 'register'
     end
   end
 

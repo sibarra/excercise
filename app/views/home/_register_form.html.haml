@@ -1,5 +1,9 @@
-= simple_form_for :user, :url => '/home/create/', :method => :post do |f|
+= simple_form_for :user, :url => '/home/register', :method => 'post' do |f|
   = f.input :first_name
   = f.input :last_name
   = f.input :email
+  = f.input :password
   = f.button :submit
+  - if @user.errors.any?
+    - @user.errors.full_messages.each do |msg|
+      %li= msg

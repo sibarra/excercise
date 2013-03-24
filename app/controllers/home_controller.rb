@@ -3,16 +3,17 @@ class HomeController < ApplicationController
 
   end
 
-  def register
+  def join
     @user = User.new
   end
 
-  def create
-    @user = users.build params[:user]
+  def register
+    @user = User.new(params[:user])
 
     if @user.save
-
+      render :index
     else
+      @errors = @user.errors.full_messages
       render :register
     end
   end
