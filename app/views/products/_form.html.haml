@@ -1,0 +1,10 @@
+= simple_form_for product do |f|
+  = f.input :code
+  = f.input :name
+  = f.input :description, :as => :text, :input_html => { :cols => 50, :rows => 3 }
+  = f.input :notes
+  = f.input :price
+  = f.button :submit
+  - if @product.errors.any?
+    - @product.errors.full_messages_each do
+      %li= msg

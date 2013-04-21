@@ -1,0 +1,11 @@
+%h1 Products
+
+- @products.each do |p|
+  %div= p.name
+  %div= p.description
+  %div= p.price
+  = link_to edit_product_path (p.id) do
+    %p Edit product
+
+= link_to new_product_path do
+  %div Create New Product

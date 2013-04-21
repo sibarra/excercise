@@ -9,6 +9,7 @@ Store::Application.routes.draw do
   end
 
   resources 'profile'
+  resources 'products'
 
   # See how all your routes lay out with "rake routes"
 
