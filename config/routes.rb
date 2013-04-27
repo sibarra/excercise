@@ -1,12 +1,12 @@
 Store::Application.routes.draw do
-  root :to => 'home#index'
+  root :to => 'static_pages#index'
 
-  resources :home do
-    collection do
-      get 'join'
-      post 'register'
-    end
-  end
+  get 'index', :to => 'static_pages#index'
+  get 'join', :to => 'static_pages#join'
+  post 'register', :to => 'static_pages#register'
+  get 'signin', :to => 'static_pages#signin'
+  post 'login', :to => 'static_pages#login'
+  get 'about', :to => 'static_pages#about'
 
   resources 'profile'
   resources 'products'
