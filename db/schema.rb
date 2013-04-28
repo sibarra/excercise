@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421052707) do
+ActiveRecord::Schema.define(:version => 20130428012404) do
 
   create_table "products", :force => true do |t|
     t.integer "code"
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(:version => 20130421052707) do
   end
 
   create_table "users", :force => true do |t|
-    t.string  "first_name",                :null => false
-    t.string  "last_name",                 :null => false
-    t.string  "email",                     :null => false
+    t.string  "first_name",                   :null => false
+    t.string  "last_name",                    :null => false
+    t.string  "email",                        :null => false
     t.string  "dob"
-    t.string  "password",                  :null => false
-    t.integer "role",       :default => 1
+    t.string  "password",                     :null => false
+    t.integer "role",          :default => 1
+    t.text    "password_salt"
   end
 
 end

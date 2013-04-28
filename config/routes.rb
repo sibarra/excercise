@@ -4,12 +4,13 @@ Store::Application.routes.draw do
   get 'index', :to => 'static_pages#index'
   get 'join', :to => 'static_pages#join'
   post 'register', :to => 'static_pages#register'
-  get 'signin', :to => 'static_pages#signin'
-  post 'login', :to => 'static_pages#login'
+  get 'sign_in', :to => 'static_pages#signin'
   get 'about', :to => 'static_pages#about'
+  get 'sign_out', :to => 'sessions#destroy'
 
-  resources 'profile'
-  resources 'products'
+  resources :profile
+  resources :products
+  resources :sessions, :only => [ :new, :create, :destroy ]
 
   # See how all your routes lay out with "rake routes"
 

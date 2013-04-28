@@ -9,7 +9,6 @@ class StaticPagesController < ApplicationController
 
   def register
     @user = User.new(params[:user])
-
     if @user.save
       render :index
     else
@@ -18,7 +17,14 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def show
+  def signin
+    if current_user
+      redirect_to root_path
+    else
+      @user = User.new
+    end
+  end
 
+  def signout
   end
 end

@@ -9,7 +9,7 @@ gem 'mysql2'
 #gem 'haml-rails'
 gem 'haml'
 gem 'simple_form'
-
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Gems used only for assets and not required
 # in production environments by default.
