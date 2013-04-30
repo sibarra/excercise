@@ -1,5 +1,8 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  static_pages:
+    welcome_message: "Welcome to Store"
+    register: "Register"
+    login: "Login"
+    invalid_login: "Invalid user or password"
+    logged_in: "You've signed in"
+    logged_out: "You have been logged out"

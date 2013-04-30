@@ -10,10 +10,10 @@ class StaticPagesController < ApplicationController
   def register
     @user = User.new(params[:user])
     if @user.save
-      render :index
+      redirect_to root_path
     else
       @errors = @user.errors.full_messages
-      render :register
+      render :join
     end
   end
 

@@ -1,0 +1,8 @@
+es:
+  static_pages:
+    welcome_message: "Bienvenido a la tienda!"
+    register: "Registrese"
+    login: "Login"
+    invalid_login: "Correo o password incorrecto"
+    logged_in: "Ha ingresado con exito"
+    logged_out: "Ha sido loggeado out con exito"
