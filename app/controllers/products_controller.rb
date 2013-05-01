@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_filter :find_product, :only => [ :edit, :update, :destroy, :show ]
+  before_filter :authenticate_user!, :only => [ :new, :edit, :update, :destroy ]
 
   def index
     @products = Product.all

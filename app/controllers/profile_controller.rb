@@ -1,8 +1,9 @@
 class ProfileController < ApplicationController
   before_filter :find_user, only: [ :edit, :update, :destroy ]
+  before_filter :authenticate_user!
 
   def index
-    @user = User.find(1)
+    @user = current_user
   end
 
   def update

@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
 
   private
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    User.find(session[:user_id]) rescue nil
   end
+
+  def authenticate_user!
+    render file: 'public/404', format: :html, status: :not_found unless current_user
+  end
+
 end
