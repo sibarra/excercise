@@ -6,3 +6,13 @@ en:
     invalid_login: "Invalid user or password"
     logged_in: "You've signed in"
     logged_out: "You have been logged out"
+    sign_in: 'Sign In'
+    sign_out: 'Sign Out'
+  products:
+    title: 'Products'
+    manage_products: 'Manage Products'
+    new: 'Create new Product'
+    edit: 'Edit Product'
+  profile:
+    title: 'User Profile'
+    edit: 'Edit Profile'

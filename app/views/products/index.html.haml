@@ -1,11 +1,9 @@
-%h1 Products
+%h1= t('products.title')
 
 - @products.each do |p|
   %div= p.name
   %div= p.description
   %div= p.price
-  = link_to edit_product_path (p.id) do
-    %p Edit product
+  = link_to t('products.edit'), edit_product_path(p.id)
 
-= link_to new_product_path do
-  %div Create New Product
+= link_to t('products.new'), new_product_path

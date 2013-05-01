@@ -1,0 +1,7 @@
+- if current_user
+  = link_to t('profile.manage_profile'), profile_index_path
+  = link_to t('products.manage_products'), products_path
+  = link_to t('static_pages.sign_out'), sign_out_path
+- else
+  = link_to t('static_pages.sign_in'), sign_in_path
+

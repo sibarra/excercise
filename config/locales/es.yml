@@ -6,3 +6,13 @@ es:
     invalid_login: "Correo o password incorrecto"
     logged_in: "Ha ingresado con exito"
     logged_out: "Ha sido loggeado out con exito"
+    sign_in: 'Ingresar'
+    sign_out: 'Salir'
+  products:
+    title: 'Productos'
+    manage_products: 'Administrar Productos'
+    new: 'Crear nuevo Producto'
+    edit: 'Editar Producto'
+  profile:
+    title: 'Perfil de Usuario'
+    edit: 'Editar Perfil'
