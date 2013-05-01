@@ -6,8 +6,5 @@
     =javascript_include_tag "application"
     =csrf_meta_tags
   %body
-    - if flash[:notice]
-      %li= flash[:notice]
-    - if flash[:error]
-      %li= flash[:error]
+    =render '/layouts/messages'
     =yield
