@@ -16,3 +16,4 @@ es:
   profile:
     title: 'Perfil de Usuario'
     edit: 'Editar Perfil'
+    manage_profile: 'Administrar Perfil'
