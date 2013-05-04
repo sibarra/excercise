@@ -1,4 +1,6 @@
 es:
+  main:
+    title: "La tienda"
   static_pages:
     welcome_message: "Bienvenido a la tienda!"
     register: "Registrese"
