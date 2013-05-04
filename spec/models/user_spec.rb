@@ -46,6 +46,12 @@ describe User do
       user2 = FactoryGirl.build :user, :email => 'A@B.com'
       user2.should be_invalid
     end
+
+    it 'should save email in lowercase' do
+      user.email = 'A@B.COM'
+      user.save
+      user.email.should eql 'a@b.com'
+    end
   end
 
   describe 'password' do
