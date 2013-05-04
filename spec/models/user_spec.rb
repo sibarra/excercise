@@ -39,6 +39,13 @@ describe User do
       user2 = FactoryGirl.build :user, :email => 'a@b.com'
       user2.should be_invalid
     end
+
+    it 'cant be duplicate with uppercase or lowercase' do
+      user.email = 'a@b.com'
+      user.save
+      user2 = FactoryGirl.build :user, :email => 'A@B.com'
+      user2.should be_invalid
+    end
   end
 
   describe 'password' do
