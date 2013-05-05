@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :dob, :password
-  before_save :encrypt_password
+  before_create :encrypt_password
   before_save { |user| user.email = user.email.downcase }
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :email, :presence => true, uniqueness: { case_sensitive: false }
-  validates :password, :presence => true, :length => { :in => 6..20 }
+  validates :password, :presence => true, :length => { :minimum => 6, :maximum => 100 }
 
   def self.authenticate(email, password)
     user = find_by_email(email)

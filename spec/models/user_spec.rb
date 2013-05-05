@@ -66,12 +66,12 @@ describe User do
     end
 
     it "can't be longer than 20 characters" do
-      user.password = '1234567890123456789012345'
+      user.password = (0...101).map{ ('a'..'z').to_a[rand(26)] }.join
       user.should be_invalid
     end
 
-    it "can be between 6 and 20 characters long" do
-      user.password = '12345678'
+    it "can be between 6 and 100 characters long" do
+      user.password = (0...100).map{ ('a'..'z').to_a[rand(26)] }.join
       user.should be_valid
     end
   end
