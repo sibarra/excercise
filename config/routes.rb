@@ -11,6 +11,7 @@ Store::Application.routes.draw do
   resources :profile
   resources :products
   resources :sessions, :only => [ :new, :create, :destroy ]
+  resources :categories
 
   # See how all your routes lay out with "rake routes"
 

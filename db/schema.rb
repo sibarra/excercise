@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504063150) do
+ActiveRecord::Schema.define(:version => 20130505020319) do
+
+  create_table "categories", :force => true do |t|
+    t.string  "name",                         :null => false
+    t.boolean "exclusive", :default => false, :null => false
+  end
 
   create_table "products", :force => true do |t|
     t.integer "code"

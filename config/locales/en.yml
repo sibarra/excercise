@@ -19,3 +19,7 @@ en:
     title: 'User Profile'
     edit: 'Edit Profile'
     manage_profile: 'Manage Profile'
+  categories:
+    title: 'Manage Categories'
+    new: 'Create new Category'
+    edit: 'Edit Category'

@@ -19,3 +19,7 @@ es:
     title: 'Perfil de Usuario'
     edit: 'Editar Perfil'
     manage_profile: 'Administrar Perfil'
+  categories:
+    title: 'Administrar Categorias'
+    new: 'Crear nueva Categoria'
+    edit: 'Editar Categoria'

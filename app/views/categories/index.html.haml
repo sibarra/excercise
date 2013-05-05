@@ -1,0 +1,5 @@
+%h1= t('categories.title')
+
+- @categories.each do |c|
+  %div= c.name
+  %li= link_to t('categories.edit'), edit_category_path( c.id )

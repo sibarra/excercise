@@ -35,4 +35,9 @@ FactoryGirl.define do
     notes       'Notes be here'
     price       '2.50'
   end
+
+  factory :category do
+    name 'Category x'
+    exclusive false
+  end
 end
