@@ -1,0 +1,8 @@
+%h1= @category.name
+- @category.subcategories.each do |s|
+  %p= s.name
+  %p= s.category.name
+  %p= s.order
+  = link_to t('subcategories.edit'), edit_category_subcategory_path( @category, s )
+
+= link_to t('subcategories.create'), new_category_subcategory_path( @category )
