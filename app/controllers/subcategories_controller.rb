@@ -14,7 +14,7 @@ class SubcategoriesController < ApplicationController
     @subcategory = Subcategory.new params[:subcategory]
 
     if @subcategory.save
-      redirect_to category_subcategory_path( @category, @subcategory )
+      redirect_to category_subcategory_path( @subcategory.category.id, @subcategory )
     else
       render :new
     end
@@ -22,7 +22,7 @@ class SubcategoriesController < ApplicationController
 
   def update
     if @subcategory.update_attributes( params[:subcategory] )
-      redirect_to category_subcategory_path( @category, @subcategory )
+      redirect_to category_subcategory_path( @subcategory.category.id, @subcategory )
     else
       render :edit
     end
@@ -31,9 +31,13 @@ class SubcategoriesController < ApplicationController
   private
   def find_category
     @category = Category.find(params[:category_id])
+    rescue ActiveRecord::RecordNotFound
+      render file: 'public/404', format: :html, status: :not_found
   end
 
   def find_subcategory
     @subcategory = @category.subcategories.find( params[ :id ] )
+    rescue ActiveRecord::RecordNotFound
+      render file: 'public/404', format: :html, status: :not_found
   end
 end
