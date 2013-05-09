@@ -48,5 +48,26 @@ describe SubcategoriesController do
         response.should render_template( :new )
       end
     end
+
+    describe 'with existing category' do
+      it 'should render edit template' do
+        get :edit, :category_id => subcategory.category, :id => subcategory
+        response.status.should eql( 200 )
+        response.should render_template( :edit )
+      end
+
+      it 'should render 404 when a category is not valid' do
+        get :edit, :category_id => 100, :id => subcategory
+        response.status.should eql( 404 )
+        response.should render_template( file: 'public/404' )
+      end
+
+      it 'updates and redirects to the subcategory' do
+        put :update, :category_id => subcategory.category, :id => subcategory.id, subcategory: { :name => "NEWNAME" }
+        response.status.should eql( 302 )
+        response.should redirect_to category_subcategory_path( subcategory.category, subcategory )
+        subcategory.reload.name.should eql( "NEWNAME" )
+      end
+    end
   end
 end
