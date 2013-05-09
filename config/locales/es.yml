@@ -23,3 +23,8 @@ es:
     title: 'Administrar Categorias'
     new: 'Crear nueva Categoria'
     edit: 'Editar Categoria'
+    show: 'Ver Categoria'
+    subcategories_for: 'Subcategories for current Category'
+  subcategories:
+    new: 'Create Subcategory'
+    edit: 'Edit Subcategory'

@@ -23,3 +23,8 @@ en:
     title: 'Manage Categories'
     new: 'Create new Category'
     edit: 'Edit Category'
+    show: 'View Category'
+    subcategories_for: 'Subcategories for current Category'
+  subcategories:
+    new: 'Create Subcategory'
+    edit: 'Edit Subcategory'

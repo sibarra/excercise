@@ -40,4 +40,10 @@ FactoryGirl.define do
     name 'Category x'
     exclusive false
   end
+
+  factory :subcategory do
+    name 'Subcategory X'
+    order 1
+    association :category
+  end
 end
