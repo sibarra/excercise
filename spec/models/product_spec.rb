@@ -33,4 +33,21 @@ describe 'Product' do
       product.should be_valid
     end
   end
+
+  describe "image" do
+    it "should allow png files" do
+      product.image = File.new( Rails.root + 'spec/images/rails.png' )
+      product.should be_valid
+    end
+
+    it "should allow jpg files" do
+      product.image = File.new( Rails.root + 'spec/images/dress.jpg' )
+      product.should be_valid
+    end
+
+    it 'should not allow other files' do
+      product.image = File.new( Rails.root + 'spec/images/test.txt' )
+      product.should be_invalid
+    end
+  end
 end

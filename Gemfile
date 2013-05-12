@@ -10,6 +10,7 @@ gem 'mysql2'
 gem 'haml'
 gem 'simple_form'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Gems used only for assets and not required
 # in production environments by default.

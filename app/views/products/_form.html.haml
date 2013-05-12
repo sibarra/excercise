@@ -4,7 +4,8 @@
   = f.input :description, :as => :text, :input_html => { :cols => 50, :rows => 3 }
   = f.input :notes
   = f.input :price
+  = f.input :image, :as => :file
   = f.button :submit
   - if @product.errors.any?
-    - @product.errors.full_messages_each do
+    - @product.errors.each do |msg|
       %li= msg
