@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Product' do
+describe Product do
   let(:product) { FactoryGirl.create :product }
 
   describe "code" do
@@ -48,6 +48,14 @@ describe 'Product' do
     it 'should not allow other files' do
       product.image = File.new( Rails.root + 'spec/images/test.txt' )
       product.should be_invalid
+    end
+
+    it 'should allow files smaller than 5 MBs' do
+      should validate_attachment_size(:image).less_than(5.megabytes)
+    end
+
+    it 'cant allow files larger than 5 MBs' do
+      should_not validate_attachment_size(:image).greater_than(5.megabytes)
     end
   end
 end

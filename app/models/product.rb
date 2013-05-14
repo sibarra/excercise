@@ -4,6 +4,6 @@ class Product < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :price, :numericality => true
-  validates_attachment :image, :size => { :less_than => 5.megabytes }
+  validates_attachment :image, :size => { :in =>  0..5.megabytes }
   validates_attachment_content_type :image, :content_type => [ 'image/jpeg', 'image/png' ]
 end
