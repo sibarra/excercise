@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
-  attr_accessible :code, :name, :description, :notes, :price, :image
+  attr_accessible :code, :name, :description, :notes, :price, :image, :category_id, :subcategory_id
   has_attached_file :image, :styles => { :medium => "300x300", :thumb => "100x100" }, :default_url => "/images/:style/missing.png"
+  belongs_to :category
+  belongs_to :subcategory
 
   validates :name, :presence => true
   validates :price, :numericality => true

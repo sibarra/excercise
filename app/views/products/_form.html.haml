@@ -1,10 +1,12 @@
 = simple_form_for product do |f|
   = f.input :code
   = f.input :name
-  = f.input :description, :as => :text, :input_html => { :cols => 50, :rows => 3 }
-  = f.input :notes
   = f.input :price
   = f.input :image, :as => :file
+  = f.association :category
+  = f.association :subcategory
+  = f.input :description, :as => :text, :input_html => { :cols => 50, :rows => 3 }
+  = f.input :notes
   = f.button :submit
   - if @product.errors.any?
     - @product.errors.each do |msg|
