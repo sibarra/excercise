@@ -1,9 +1,11 @@
 %h1= t('products.title')
 
 - @products.each do |p|
-  %div= p.name
-  %div= p.description
-  %div= p.price
-  = link_to t('products.edit'), edit_product_path(p.id)
+  %div
+    %h3= p.name
+    %img{ :src => p.image.url(:thumb) }
+    %div= p.description
+    %div= p.price
+    = link_to t('products.edit'), edit_product_path(p.id)
 
 = link_to t('products.new'), new_product_path
