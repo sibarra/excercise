@@ -4,7 +4,7 @@
   = f.input :price
   = f.input :image, :as => :file
   = f.association :category
-  = f.association :subcategory
+  = f.association :subcategory, collection: Subcategory.where(:category_id => product.category)
   = f.input :description, :as => :text, :input_html => { :cols => 50, :rows => 3 }
   = f.input :notes
   = f.button :submit
