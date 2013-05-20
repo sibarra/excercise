@@ -20,6 +20,10 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.json { render :json => @category.subcategories }
+      format.html
+    end
   end
 
   def update
