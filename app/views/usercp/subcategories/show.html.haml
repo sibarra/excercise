@@ -1,0 +1,4 @@
+%h1= @subcategory.name
+%p= @subcategory.category.name
+%p= @subcategory.order
+= link_to t('subcategories.edit'), edit_usercp_category_subcategory_path(@category, @subcategory )

@@ -1,0 +1,9 @@
+= simple_form_for [:usercp, category, subcategory] do |f|
+  = f.input :name
+  = f.association :category, :selected => category.id
+  = f.input :order
+  = f.submit :submit
+- if @subcategory.errors.any?
+  - @subcategory.errors.full_messages_each do
+    %li= msg
+

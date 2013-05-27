@@ -1,0 +1,8 @@
+%h1= t('profile.title')
+
+%div=@user.first_name
+%div=@user.last_name
+%div=@user.email
+
+= link_to t('profile.edit'), edit_usercp_profile_path(@user.id)
+

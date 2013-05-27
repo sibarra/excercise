@@ -8,11 +8,14 @@ Store::Application.routes.draw do
   get 'about', :to => 'static_pages#about'
   get 'sign_out', :to => 'sessions#destroy'
 
-  resources :profile
-  resources :products
   resources :sessions, :only => [ :new, :create, :destroy ]
-  resources :categories do
-    resources :subcategories
+
+  namespace :usercp do
+    resources :profile
+    resources :products
+    resources :categories do
+      resources :subcategories
+    end
   end
 
   # See how all your routes lay out with "rake routes"
