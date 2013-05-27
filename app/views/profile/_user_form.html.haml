@@ -1,8 +1,0 @@
-= simple_form_for user, :url => "/profile/#{@user.id}", :method => 'PUT' do |f|
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :email
-  = f.button :submit
-  - if @user.errors.any?
-    - @user.errors.messages.each do |msg|
-      %li=msg

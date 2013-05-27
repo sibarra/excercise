@@ -1,7 +1,0 @@
-= simple_form_for category do |f|
-  = f.input :name
-  = f.submit :submit
-  - if @category.errors.any?
-    - @category.errors.inspect
-    - @category.errors.messages do
-      %li= msg
