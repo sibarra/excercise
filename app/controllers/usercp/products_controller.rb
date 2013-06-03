@@ -1,9 +1,9 @@
 class Usercp::ProductsController < ApplicationController
   before_filter :find_product, :only => [ :edit, :update, :destroy, :show ]
-  before_filter :authenticate_user!, :only => [ :new, :edit, :update, :destroy ]
+  before_filter :authenticate_user!, :only => [ :index, :new, :edit, :update, :destroy, :create ]
 
   def index
-    @products = Product.all
+    @products = Product.where("user_id = #{current_user.id}")
   end
 
   def new
@@ -12,6 +12,7 @@ class Usercp::ProductsController < ApplicationController
 
   def create
     @product = Product.new params[:product]
+    @product.user = current_user
 
     if @product.save
       redirect_to usercp_product_path ( @product )
@@ -21,6 +22,7 @@ class Usercp::ProductsController < ApplicationController
   end
 
   def update
+    @product.user = current_user
     if @product.update_attributes params[ :product ]
       redirect_to usercp_product_path ( @product )
     else

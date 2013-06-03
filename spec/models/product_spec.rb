@@ -58,4 +58,11 @@ describe Product do
       should_not validate_attachment_size(:image).greater_than(5.megabytes)
     end
   end
+
+  describe "user_id" do
+    it "should not be nil" do
+      product.user_id = nil
+      product.should be_invalid
+    end
+  end
 end

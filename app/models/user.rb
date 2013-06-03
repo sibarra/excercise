@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :dob, :password
   before_create :encrypt_password
   before_save { |user| user.email = user.email.downcase }
+  has_many :products
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true

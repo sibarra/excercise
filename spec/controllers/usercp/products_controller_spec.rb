@@ -16,7 +16,7 @@ describe Usercp::ProductsController do
     describe 'create' do
       it 'should not be able to create products' do
         post :create, product: FactoryGirl.attributes_for( :product )
-        response.status.should eql( 302 )
+        response.status.should eql( 404 )
         response.should render_template( file: 'public/404' )
       end
     end

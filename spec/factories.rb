@@ -34,6 +34,7 @@ FactoryGirl.define do
     description 'Amazing super product'
     notes       'Notes be here'
     price       '2.50'
+    association :user
   end
 
   factory :category do
