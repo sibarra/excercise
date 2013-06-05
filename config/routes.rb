@@ -18,6 +18,9 @@ Store::Application.routes.draw do
     end
   end
 
+  match ':category_name' => 'category#show', as: :category_show, via: :get
+  match ':category_name/:subcategory_name' => 'subcategories#show', as: :category_subcategory, via: :get
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

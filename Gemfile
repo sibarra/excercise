@@ -9,6 +9,7 @@ gem 'mysql2'
 #gem 'haml-rails'
 gem 'haml'
 gem 'simple_form'
+gem 'friendly_id'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
